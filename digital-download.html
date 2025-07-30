@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Products - Infinistore2</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Dummy logic: simulate download unlocked after payment
+    function unlockDownload(id) {
+      document.getElementById(id).style.display = 'inline-block';
+      alert('Thank you! Download is now available.');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header/Navbar -->
+  <header>
+    <div class="logo">Infinistore2</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="digital-download.html">Digital Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Title -->
+  <section class="hero" style="background: #6a0572;">
+    <h1>Digital Products & Services</h1>
+    <p>Explore AI tools, business kits, digital downloads & services</p>
+  </section>
+
+  <!-- Digital Products -->
+  <section class="services">
+    <h2>Downloadable Products</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>SEO Toolkit (ZIP)</h3>
+        <p>Improve your site’s ranking with our curated SEO tools bundle.</p>
+        <button onclick="unlockDownload('download1')">Pay $14.99</button>
+        <a href="#" id="download1" class="btn" style="display: none;">Download Now</a>
+      </div>
+
+      <div class="service-card">
+        <h3>AI Prompt Collection (PDF)</h3>
+        <p>Exclusive high-performing prompts for ChatGPT, image & video AI.</p>
+        <button onclick="unlockDownload('download2')">Pay $9.99</button>
+        <a href="#" id="download2" class="btn" style="display: none;">Download Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Services -->
+  <section class="services">
+    <h2>Hire Our Digital Experts</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Custom AI Agent</h3>
+        <p>Get a personalized AI solution for your specific workflow.</p>
+        <a href="contact.html" class="btn-secondary">Send Query</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Shopify/WooCommerce Store Setup</h3>
+        <p>Let our experts build your complete online store.</p>
+        <a href="contact.html" class="btn-secondary">Send Query</a>
+      </div>
+
+      <div class="service-card">
+        <h3>USA LLC Formation Guide</h3>
+        <p>Learn how to register a U.S.-based company from anywhere.</p>
+        <button onclick="unlockDownload('download3')">Pay $24.99</button>
+        <a href="#" id="download3" class="btn" style="display: none;">Download Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+<script src="js/script.js"></script>
+</body>
+</html>

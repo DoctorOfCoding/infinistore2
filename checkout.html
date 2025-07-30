@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Checkout - Infinistore2</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    function updateTotals() {
+      const subtotal = 59.98; // Placeholder: You can link this to cart.js later
+      const shipping = 10.00;
+      const tax = parseFloat((subtotal * 0.05).toFixed(2)); // 5% flat tax
+      const total = subtotal + shipping + tax;
+
+      document.getElementById('subtotal').innerText = `$${subtotal.toFixed(2)}`;
+      document.getElementById('shipping').innerText = `$${shipping.toFixed(2)}`;
+      document.getElementById('tax').innerText = `$${tax.toFixed(2)}`;
+      document.getElementById('total').innerText = `$${total.toFixed(2)}`;
+    }
+
+    function placeOrder(event) {
+      event.preventDefault();
+      alert("Payment simulated. Order placed!");
+      window.location.href = "thankyou.html";
+    }
+  </script>
+</head>
+<body onload="updateTotals()">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Infinistore2</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="digital-download.html">Digital Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Secure Checkout Badge -->
+  <section class="hero" style="background: #007f5f;">
+    <h1><span style="font-size: 1.3rem;">🔒</span> Secure Checkout</h1>
+    <p>Encrypted Payment. Buyer Protection. Global Support</p>
+  </section>
+
+  <!-- Checkout Container -->
+  <section class="services">
+    <form onsubmit="placeOrder(event)" style="max-width: 800px; margin: auto;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <!-- Billing Info -->
+        <div>
+          <h3>Billing & Shipping Info</h3>
+          <label>Full Name:</label><br/>
+          <input type="text" required><br/><br/>
+
+          <label>Email Address:</label><br/>
+          <input type="email" required><br/><br/>
+
+          <label>Phone Number:</label><br/>
+          <input type="tel"><br/><br/>
+
+          <label>Delivery Address:</label><br/>
+          <textarea rows="4" required></textarea><br/><br/>
+
+          <label>Country:</label><br/>
+          <input type="text" required><br/><br/>
+        </div>
+
+        <!-- Payment Info -->
+        <div>
+          <h3>Payment Method</h3>
+          <label>Card Number:</label><br/>
+          <input type="text" placeholder="1234 5678 9012 3456" required><br/><br/>
+
+          <label>Expiry Date:</label><br/>
+          <input type="text" placeholder="MM/YY" required><br/><br/>
+
+          <label>CVC:</label><br/>
+          <input type="text" placeholder="123" required><br/><br/>
+
+          <label>Card Holder Name:</label><br/>
+          <input type="text" required><br/><br/>
+
+          <div style="margin-top: 2rem; font-size: 0.9rem; color: green;">
+            ✅ Payment secured by AES-256 encryption
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div style="margin-top: 3rem;">
+        <h3>Order Summary</h3>
+        <div style="font-size: 1.1rem; line-height: 1.8;">
+          <p>Subtotal: <strong id="subtotal">$0.00</strong></p>
+          <p>Shipping Fee: <strong id="shipping">$0.00</strong></p>
+          <p>Tax (5%): <strong id="tax">$0.00</strong></p>
+          <hr/>
+          <p>Total Amount: <strong id="total">$0.00</strong></p>
+        </div>
+      </div>
+
+      <!-- Place Order -->
+      <div style="margin-top: 2rem;">
+        <button type="submit" class="btn">Confirm & Pay</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
